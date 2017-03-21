@@ -67,12 +67,11 @@ class API {
                     
                 case 200...299:
                     
-                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                        
-                        let user = User(json: userJSON)
-                        callback(user)
-                        
-                    }
+                    JSONParser.getUser(data: data, callback: { (success, user) in
+                        if success {
+                            callback(user)
+                        }
+                    })
                     
                 default:
                     
