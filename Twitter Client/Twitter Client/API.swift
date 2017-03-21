@@ -109,8 +109,8 @@ class API {
                 guard let response = response else { callback(nil); return }
                 guard let data = data else { callback(nil); return }
                 
-                if response.statusCode >= 200 && response.statusCode < 300 {
-                    
+                switch response.statusCode {
+                case 200...299:
                     JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
                         
                         if success {
@@ -120,12 +120,15 @@ class API {
                         }
                         
                     })
-                    
-                } else {
-                    
-                    print("Something else went terribly wrong. We have a status code outside of 200 - 299.")
+                case 400...499:
+                    print("Client side error code: \(response.statusCode)")
                     callback(nil)
-                    
+                case 500...599:
+                    print("Server side error code: \(response.statusCode)")
+                    callback(nil)
+                default:
+                    print("Something else went terribly wrong. We have a status code of: \(response.statusCode)")
+                    callback(nil)
                 }
                 
             })
