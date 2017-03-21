@@ -75,12 +75,7 @@ class JSONParser {
             print("Error serializing the User JSON.")
             return
         }
-//        if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-//            
-//            let user = User(json: userJSON)
-//            return user
-//            
-//        }
+
     }
     
 }
