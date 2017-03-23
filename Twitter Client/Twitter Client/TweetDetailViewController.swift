@@ -19,7 +19,6 @@ class TweetDetailViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("IsRetweet: \(tweet.retweet_count)")
         
         self.detailText.text = tweet.text
         self.userText.text = tweet.user?.name
@@ -28,6 +27,8 @@ class TweetDetailViewController: UIViewController {
         } else {
             self.isRetweet.text = "Not a Retweet."
         }
+        
+        
         
     }
 
