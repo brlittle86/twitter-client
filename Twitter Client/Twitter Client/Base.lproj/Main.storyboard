@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,21 +48,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="6ee-9i-lUU" secondAttribute="trailing" constant="8" id="1cv-8e-1i2"/>
-                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="top" secondItem="LfP-rC-epd" secondAttribute="bottom" constant="8" id="1k6-G2-6kF"/>
-                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="top" secondItem="LfP-rC-epd" secondAttribute="bottom" constant="8" id="4fS-8t-l5r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dfw-tZ-Q0j" secondAttribute="trailing" constant="8" id="59v-VM-Kd9"/>
-                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leadingMargin" constant="8" id="6OX-Z8-6a9"/>
-                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="8kb-dN-idh"/>
-                            <constraint firstItem="6ee-9i-lUU" firstAttribute="top" secondItem="kmI-iF-h57" secondAttribute="bottom" constant="8" id="FZh-2D-VIx"/>
-                            <constraint firstAttribute="trailing" secondItem="kmI-iF-h57" secondAttribute="trailing" constant="8" id="MPD-DU-POD"/>
-                            <constraint firstAttribute="trailing" secondItem="Dfw-tZ-Q0j" secondAttribute="trailing" constant="8" id="P3K-BY-WKv"/>
-                            <constraint firstItem="kR8-Th-HOy" firstAttribute="top" secondItem="Dfw-tZ-Q0j" secondAttribute="bottom" constant="8" id="QsZ-eI-RQr"/>
-                            <constraint firstItem="kmI-iF-h57" firstAttribute="top" secondItem="kR8-Th-HOy" secondAttribute="bottom" constant="8" id="TOo-RW-2D5"/>
-                            <constraint firstItem="kR8-Th-HOy" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="hms-Hs-aUP"/>
-                            <constraint firstItem="6ee-9i-lUU" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="lzT-np-rUJ"/>
-                            <constraint firstItem="kmI-iF-h57" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="p6P-J6-dyR"/>
-                            <constraint firstAttribute="trailing" secondItem="kR8-Th-HOy" secondAttribute="trailing" constant="8" id="ye2-Oo-y7i"/>
+                            <constraint firstItem="kmI-iF-h57" firstAttribute="top" secondItem="kR8-Th-HOy" secondAttribute="bottom" constant="8" id="2lf-fz-GMm"/>
+                            <constraint firstItem="kmI-iF-h57" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="79R-Va-D3Y"/>
+                            <constraint firstItem="kR8-Th-HOy" firstAttribute="top" secondItem="Dfw-tZ-Q0j" secondAttribute="bottom" constant="8" id="DaJ-aM-yd1"/>
+                            <constraint firstAttribute="trailing" secondItem="kR8-Th-HOy" secondAttribute="trailing" constant="8" id="ERC-l4-Xep"/>
+                            <constraint firstItem="6ee-9i-lUU" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="NLq-0m-Stm"/>
+                            <constraint firstAttribute="trailing" secondItem="kmI-iF-h57" secondAttribute="trailing" constant="8" id="STE-b2-UlC"/>
+                            <constraint firstAttribute="trailing" secondItem="6ee-9i-lUU" secondAttribute="trailing" constant="8" id="dOd-S1-CMS"/>
+                            <constraint firstItem="6ee-9i-lUU" firstAttribute="top" secondItem="kmI-iF-h57" secondAttribute="bottom" constant="8" id="dVF-5a-aRY"/>
+                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="kmb-UC-HdB"/>
+                            <constraint firstItem="kR8-Th-HOy" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="qKF-wy-WtJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Dfw-tZ-Q0j" secondAttribute="trailing" constant="8" id="tcR-wi-myf"/>
+                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="top" secondItem="LfP-rC-epd" secondAttribute="bottom" constant="8" id="wFB-tl-W7A"/>
                         </constraints>
                     </view>
                     <connections>
