@@ -10,6 +10,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--User Detail View Controller-->
+        <scene sceneID="rU4-jv-fO5">
+            <objects>
+                <viewController id="C4q-C0-5Vv" customClass="UserDetailViewController" customModule="Twitter_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LfP-rC-epd"/>
+                        <viewControllerLayoutGuide type="bottom" id="kf6-KW-ijE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sMY-bj-3b3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfw-tZ-Q0j">
+                                <rect key="frame" x="8" y="72" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-Th-HOy">
+                                <rect key="frame" x="8" y="101" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmI-iF-h57">
+                                <rect key="frame" x="8" y="130" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-9i-lUU">
+                                <rect key="frame" x="8" y="159" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6ee-9i-lUU" secondAttribute="trailing" constant="8" id="1cv-8e-1i2"/>
+                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="top" secondItem="LfP-rC-epd" secondAttribute="bottom" constant="8" id="1k6-G2-6kF"/>
+                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="top" secondItem="LfP-rC-epd" secondAttribute="bottom" constant="8" id="4fS-8t-l5r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dfw-tZ-Q0j" secondAttribute="trailing" constant="8" id="59v-VM-Kd9"/>
+                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leadingMargin" constant="8" id="6OX-Z8-6a9"/>
+                            <constraint firstItem="Dfw-tZ-Q0j" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="8kb-dN-idh"/>
+                            <constraint firstItem="6ee-9i-lUU" firstAttribute="top" secondItem="kmI-iF-h57" secondAttribute="bottom" constant="8" id="FZh-2D-VIx"/>
+                            <constraint firstAttribute="trailing" secondItem="kmI-iF-h57" secondAttribute="trailing" constant="8" id="MPD-DU-POD"/>
+                            <constraint firstAttribute="trailing" secondItem="Dfw-tZ-Q0j" secondAttribute="trailing" constant="8" id="P3K-BY-WKv"/>
+                            <constraint firstItem="kR8-Th-HOy" firstAttribute="top" secondItem="Dfw-tZ-Q0j" secondAttribute="bottom" constant="8" id="QsZ-eI-RQr"/>
+                            <constraint firstItem="kmI-iF-h57" firstAttribute="top" secondItem="kR8-Th-HOy" secondAttribute="bottom" constant="8" id="TOo-RW-2D5"/>
+                            <constraint firstItem="kR8-Th-HOy" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="hms-Hs-aUP"/>
+                            <constraint firstItem="6ee-9i-lUU" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="lzT-np-rUJ"/>
+                            <constraint firstItem="kmI-iF-h57" firstAttribute="leading" secondItem="sMY-bj-3b3" secondAttribute="leading" constant="8" id="p6P-J6-dyR"/>
+                            <constraint firstAttribute="trailing" secondItem="kR8-Th-HOy" secondAttribute="trailing" constant="8" id="ye2-Oo-y7i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="screenName" destination="kR8-Th-HOy" id="ZLg-NZ-vkq"/>
+                        <outlet property="userDescription" destination="6ee-9i-lUU" id="Yql-MA-jOG"/>
+                        <outlet property="userLocation" destination="kmI-iF-h57" id="FXL-OK-kzK"/>
+                        <outlet property="userName" destination="Dfw-tZ-Q0j" id="35j-pc-vSZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N0O-6h-jaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="-645"/>
+        </scene>
         <!--Home Timeline View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -69,15 +136,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kZO-GI-aFV">
-                        <barButtonItem key="rightBarButtonItem" title="User" id="8Qg-mc-jGd">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hxj-o7-Yda">
+                        <barButtonItem key="rightBarButtonItem" id="5rg-2t-GuE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rZA-gK-QCf">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Account"/>
+                                <connections>
+                                    <segue destination="C4q-C0-5Vv" kind="show" identifier="userDetailSegue" id="Gwx-43-4jn"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="LPb-lP-ot2" kind="show" identifier="userDetailSegue" id="6zb-gx-hnX"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -88,40 +155,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.39999999999998" y="42.728635682158924"/>
-        </scene>
-        <!--User Detail View Controller-->
-        <scene sceneID="NNa-d0-oyW">
-            <objects>
-                <viewController id="LPb-lP-ot2" customClass="UserDetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7HO-wA-uvS"/>
-                        <viewControllerLayoutGuide type="bottom" id="FLT-eJ-Qa4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t0x-O1-daX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7A-1e-QMy">
-                                <rect key="frame" x="24" y="72" width="327" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="S7A-1e-QMy" secondAttribute="trailing" constant="8" id="45y-lY-anh"/>
-                            <constraint firstItem="S7A-1e-QMy" firstAttribute="top" secondItem="7HO-wA-uvS" secondAttribute="bottom" constant="8" id="iFZ-3W-BC2"/>
-                            <constraint firstItem="S7A-1e-QMy" firstAttribute="leading" secondItem="t0x-O1-daX" secondAttribute="leadingMargin" constant="8" id="tgs-b5-l9L"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="userName" destination="S7A-1e-QMy" id="OsY-co-b18"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0hr-wI-M6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="962" y="-854"/>
         </scene>
         <!--Tweet Detail View Controller-->
         <scene sceneID="ffK-6t-3gO">
@@ -174,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIa-XJ-DDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="43"/>
+            <point key="canvasLocation" x="1905" y="43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e9O-4j-eBd">

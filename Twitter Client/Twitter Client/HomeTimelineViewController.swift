@@ -15,6 +15,8 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
             self.tableView.reloadData()
         }
     }
+    
+    var userProfile : User?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -71,12 +73,16 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     func updateTimeline() {
         
         self.activityIndicator.startAnimating()
+
         
         API.shared.getTweets { (tweets) in
+            guard let tweets = tweets else { fatalError("Tweets came back nil.") }
+            
+
             
             OperationQueue.main.addOperation {
                 
-                self.dataSource = tweets ?? []
+                self.dataSource = tweets
                 self.activityIndicator.stopAnimating()
                 
             }
