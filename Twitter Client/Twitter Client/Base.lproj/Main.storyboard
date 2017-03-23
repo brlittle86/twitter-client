@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,7 +68,18 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vNv-BR-4aP" secondAttribute="bottom" id="xIb-xJ-XD6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kZO-GI-aFV"/>
+                    <navigationItem key="navigationItem" id="kZO-GI-aFV">
+                        <barButtonItem key="rightBarButtonItem" title="User" id="8Qg-mc-jGd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hxj-o7-Yda">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Account"/>
+                            </button>
+                            <connections>
+                                <segue destination="LPb-lP-ot2" kind="show" identifier="userDetailSegue" id="6zb-gx-hnX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="vNv-BR-4aP" id="ieS-m9-cFL"/>
                         <outlet property="tableView" destination="bLV-Pl-USy" id="lya-xD-5F7"/>
@@ -76,6 +88,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.39999999999998" y="42.728635682158924"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="NNa-d0-oyW">
+            <objects>
+                <viewController id="LPb-lP-ot2" customClass="UserDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7HO-wA-uvS"/>
+                        <viewControllerLayoutGuide type="bottom" id="FLT-eJ-Qa4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t0x-O1-daX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7A-1e-QMy">
+                                <rect key="frame" x="24" y="72" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="S7A-1e-QMy" secondAttribute="trailing" constant="8" id="45y-lY-anh"/>
+                            <constraint firstItem="S7A-1e-QMy" firstAttribute="top" secondItem="7HO-wA-uvS" secondAttribute="bottom" constant="8" id="iFZ-3W-BC2"/>
+                            <constraint firstItem="S7A-1e-QMy" firstAttribute="leading" secondItem="t0x-O1-daX" secondAttribute="leadingMargin" constant="8" id="tgs-b5-l9L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userName" destination="S7A-1e-QMy" id="OsY-co-b18"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hr-wI-M6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="-854"/>
         </scene>
         <!--Tweet Detail View Controller-->
         <scene sceneID="ffK-6t-3gO">
@@ -88,12 +134,47 @@
                     <view key="view" contentMode="scaleToFill" id="Hf6-cd-5LR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsRetweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-50-uYq">
+                                <rect key="frame" x="8" y="626" width="75.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DetailText" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAX-AG-1nh">
+                                <rect key="frame" x="8" y="72" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0E-jW-QDx">
+                                <rect key="frame" x="8" y="101" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b0E-jW-QDx" firstAttribute="top" secondItem="GAX-AG-1nh" secondAttribute="bottom" constant="8" id="7CG-GK-5Za"/>
+                            <constraint firstItem="5Kn-MU-G4e" firstAttribute="top" secondItem="rLD-50-uYq" secondAttribute="bottom" constant="20" id="8Ez-kS-8s6"/>
+                            <constraint firstItem="b0E-jW-QDx" firstAttribute="leading" secondItem="Hf6-cd-5LR" secondAttribute="leading" constant="8" id="B5e-IU-bNt"/>
+                            <constraint firstItem="GAX-AG-1nh" firstAttribute="top" secondItem="qvi-eq-X9Z" secondAttribute="bottom" constant="8" id="Dxc-vn-VWs"/>
+                            <constraint firstAttribute="trailing" secondItem="GAX-AG-1nh" secondAttribute="trailing" constant="8" id="Jtm-SF-Gn6"/>
+                            <constraint firstItem="GAX-AG-1nh" firstAttribute="leading" secondItem="Hf6-cd-5LR" secondAttribute="leading" constant="8" id="NFe-68-gM8"/>
+                            <constraint firstAttribute="trailing" secondItem="b0E-jW-QDx" secondAttribute="trailing" constant="8" id="UeI-mb-xrB"/>
+                            <constraint firstItem="rLD-50-uYq" firstAttribute="leading" secondItem="Hf6-cd-5LR" secondAttribute="leading" constant="8" id="Yrm-VM-f1Z"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailText" destination="GAX-AG-1nh" id="FSO-ZH-6Iw"/>
+                        <outlet property="isRetweet" destination="rLD-50-uYq" id="Gaj-SP-QVl"/>
+                        <outlet property="userText" destination="b0E-jW-QDx" id="P0U-h5-iBM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIa-XJ-DDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="43"/>
+            <point key="canvasLocation" x="1598" y="43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e9O-4j-eBd">

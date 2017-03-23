@@ -38,8 +38,20 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         super.prepare(for: segue , sender: sender)
         
-        if segue.identifier == "showDetailSegue" {
-            
+//        if segue.identifier == "showDetailSegue" {
+//            
+//            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+//                let selectedTweet = self.dataSource[selectedIndex]
+//                
+//                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
+//                
+//                destinationController.tweet = selectedTweet
+//                
+//            }
+//            
+//        }
+        switch segue.identifier {
+        case "showDetailSegue"?:
             if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
                 let selectedTweet = self.dataSource[selectedIndex]
                 
@@ -48,7 +60,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
                 destinationController.tweet = selectedTweet
                 
             }
-            
+        case "userDetailSegue"?:
+            guard segue.destination is UserDetailViewController else { return }
+        default:
+            return
         }
         
     }
