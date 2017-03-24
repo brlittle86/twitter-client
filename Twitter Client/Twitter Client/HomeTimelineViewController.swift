@@ -19,7 +19,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     var userProfile : User?
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var timelineImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -38,24 +38,13 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         updateTimeline()
         
+        self.timelineImage.image = #imageLiteral(resourceName: "redpanda")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue , sender: sender)
         
-//        if segue.identifier == "showDetailSegue" {
-//            
-//            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
-//                let selectedTweet = self.dataSource[selectedIndex]
-//                
-//                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
-//                
-//                destinationController.tweet = selectedTweet
-//                
-//            }
-//            
-//        }
         switch segue.identifier {
         case TweetDetailViewController.identifier?:
             if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {

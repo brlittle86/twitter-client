@@ -89,8 +89,6 @@ class API {
     
     private func updateTimeLine(url: String, callback: @escaping TweetsCallback) {
         
-        //let url = URL(string: "")
-        
         if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: URL(string: url), parameters: nil) {
             
             request.account = self.account
