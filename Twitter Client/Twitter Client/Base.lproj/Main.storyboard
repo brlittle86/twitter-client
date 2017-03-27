@@ -85,9 +85,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-Pl-USy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-Pl-USy">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="rfj-9R-eJ6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
@@ -110,7 +109,7 @@
                                         <rect key="frame" x="0.0" y="160" width="375" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QaD-Ds-xgH" id="nAG-Mz-HfJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-eP-TmL">
@@ -142,7 +141,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vNv-BR-4aP" secondAttribute="trailing" id="9F4-iE-1Mf"/>
                             <constraint firstItem="vNv-BR-4aP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ahs-0R-Lb6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bLV-Pl-USy" secondAttribute="bottom" id="Gbd-gL-3WY"/>
+                            <constraint firstItem="bLV-Pl-USy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IIF-ba-xNR"/>
+                            <constraint firstAttribute="trailing" secondItem="bLV-Pl-USy" secondAttribute="trailing" id="Z1X-am-YgA"/>
                             <constraint firstItem="vNv-BR-4aP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="beh-UX-1Gz"/>
+                            <constraint firstItem="bLV-Pl-USy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="nSb-vc-WLp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vNv-BR-4aP" secondAttribute="bottom" id="xIb-xJ-XD6"/>
                         </constraints>
                     </view>
@@ -211,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="1904.8" y="42.728635682158924"/>
         </scene>
-        <!--View Controller-->
+        <!--User Timeline View Controller-->
         <scene sceneID="Hvy-fS-0iH">
             <objects>
-                <viewController id="pzQ-pg-jOp" sceneMemberID="viewController">
+                <viewController id="pzQ-pg-jOp" customClass="UserTimelineViewController" customModule="Twitter_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nkx-tL-AMn"/>
                         <viewControllerLayoutGuide type="bottom" id="47b-ey-39R"/>
@@ -222,12 +225,27 @@
                     <view key="view" contentMode="scaleToFill" id="DWE-Cc-SjX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GEt-Kc-BGP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="GEt-Kc-BGP" secondAttribute="bottom" id="9b3-ck-DXl"/>
+                            <constraint firstAttribute="trailing" secondItem="GEt-Kc-BGP" secondAttribute="trailing" id="MMd-ZO-ORB"/>
+                            <constraint firstItem="GEt-Kc-BGP" firstAttribute="top" secondItem="DWE-Cc-SjX" secondAttribute="top" id="Vwc-ld-Y9w"/>
+                            <constraint firstItem="GEt-Kc-BGP" firstAttribute="leading" secondItem="DWE-Cc-SjX" secondAttribute="leading" id="uEy-Wi-e2W"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userTableView" destination="GEt-Kc-BGP" id="78o-n9-A6G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLU-jN-ecF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2926" y="43"/>
+            <point key="canvasLocation" x="2925.5999999999999" y="42.728635682158924"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e9O-4j-eBd">
