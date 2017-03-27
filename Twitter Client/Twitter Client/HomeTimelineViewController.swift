@@ -19,7 +19,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     var userProfile : User?
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var timelineImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -32,28 +32,21 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil) //or Bundle.main
+        
+        self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
         updateTimeline()
         
+        self.timelineImage.image = #imageLiteral(resourceName: "redpanda")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue , sender: sender)
         
-//        if segue.identifier == "showDetailSegue" {
-//            
-//            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
-//                let selectedTweet = self.dataSource[selectedIndex]
-//                
-//                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
-//                
-//                destinationController.tweet = selectedTweet
-//                
-//            }
-//            
-//        }
         switch segue.identifier {
-        case "showDetailSegue"?:
+        case TweetDetailViewController.identifier?:
             if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
                 let selectedTweet = self.dataSource[selectedIndex]
                 
@@ -96,16 +89,18 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier , for: indexPath) as! TweetNibCell
         
-        cell.tweetText.text = dataSource[indexPath.row].text
+        let tweet = self.dataSource[indexPath.row]
+        
+        cell.tweet = tweet
         
         return cell
         
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("\(indexPath.row)")
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: TweetDetailViewController.identifier, sender: nil)
+    }
     
 }
